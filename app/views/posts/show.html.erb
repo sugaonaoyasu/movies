@@ -1,0 +1,21 @@
+<h1>詳細ページ</h1>
+<div class="post-box">
+    <table class="table table-striped">
+        <tr>
+            <th>タイトル</th>
+            <th>本文</th>
+        </tr>
+        <tr>
+            <td><%= @post.title%></td>
+            <td><%= @post.body%></td>
+        </tr>
+    </table>
+</div>
+
+
+
+<% if @post.user == current_user %>
+    <%= link_to "編集", edit_post_path(@post)%>
+    <%= link_to "削除", post_path(@post), method: :delete%>
+<% end %>
+<%= link_to "投稿一覧に戻る", posts_path(@post)%>
