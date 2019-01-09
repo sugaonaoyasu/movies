@@ -6,4 +6,5 @@ class User < ApplicationRecord
          
   has_many :posts, dependent: :destroy
    validates :email,{uniqueness: true, presence:true}
+   attachment :profile_image
 end
